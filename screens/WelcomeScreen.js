@@ -3,7 +3,7 @@ import { useContext, useEffect, useState } from "react";
 
 import { StyleSheet, Text, View } from "react-native";
 import { AuthContext } from "../store/auth-context";
-import { BACKEND_URL } from "../config";
+import { BACKEND_URL } from "@env";
 
 function WelcomeScreen() {
   const [fetchedMessage, setFetchedMesssage] = useState("");
@@ -20,9 +20,9 @@ function WelcomeScreen() {
 
   return (
     <View style={styles.rootContainer}>
-      <Text style={styles.title}>Welcome!</Text>
-      <Text>You authenticated successfully!</Text>
-      <Text>{fetchedMessage}</Text>
+      <Text style={styles.title}>Welcome onboard!</Text>
+      <Text style={styles.text}>You authenticated successfully!</Text>
+      <Text style={styles.textFetch}>{fetchedMessage}</Text>
     </View>
   );
 }
@@ -37,8 +37,16 @@ const styles = StyleSheet.create({
     padding: 32,
   },
   title: {
-    fontSize: 20,
+    fontSize: 30,
     fontWeight: "bold",
     marginBottom: 8,
+  },
+  text: {
+    fontSize: 20,
+    // marginVertical: 16,
+  },
+  textFetch: {
+    fontSize: 17,
+    marginTop: 20,
   },
 });
